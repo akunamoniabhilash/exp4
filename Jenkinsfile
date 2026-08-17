@@ -1,17 +1,17 @@
-pipeline{
-  agent any
+pipeline {
+    agent any
 
-  stage{
-    stage('Compile"){
-        steps{
-          sh "javac Helloworld.java'
+    stages {
+        stage('Compile') {
+            steps {
+                sh 'javac HelloWorld.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                sh 'java HelloWorld'
+            }
         }
     }
-
-    stage('Run'){
-      steps{
-        sh 'java Helloworld'
-      }
-    }
-  }
 }
